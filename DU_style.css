@@ -8,11 +8,18 @@ html {
 }
 
 h1 {
-    font-family: 'Lexend Tera', sans-serif;
+    
     text-align: center;
     text-shadow: white 0px 0px 5px;
-    border: 1px solid black;
+    border: 1px solid black;font-family: 'Lexend Tera', sans-serif;
     border-radius: 5px;
+    margin: 30px auto;
+    width: fit-content;
+}
+
+p{
+    text-align: center;
+    text-shadow: white 0px 0px 5px;
     margin: 30px auto;
     width: fit-content;
 }
@@ -20,7 +27,7 @@ h1 {
 
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: 1fr 1fr;
     gap: 10px;
     padding: 10px;
 }
@@ -30,10 +37,15 @@ h1 {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid black;
     border-radius: 12px;
-
-
-
     padding: 20px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+    background-color:rgb(145, 128, 161);
+    border: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .card-animate {
