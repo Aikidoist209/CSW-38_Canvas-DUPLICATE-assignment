@@ -17,18 +17,27 @@ h1 {
     width: fit-content;
 }
 
-.flex-container {
+
+.grid-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 10px;
     padding: 10px;
 }
 
-.flex-item {
-    background-color: rgb(160, 106, 155);
-    border: 5px solid black;
-    border-radius: 5px;
-    margin: 10px;
+.card {
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid black;
+    border-radius: 12px;
+
+
+
     padding: 20px;
-    font-size: 30px;
+}
+
+.card-animate {
+    grid-row: span 2;
+
+
 }
