@@ -9,18 +9,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend+Tera:wght@100..900&display=swap" rel="stylesheet">
+    
+    <!-- Weather Widget Script -->
+    <script>
+        !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='https://weatherwidget.io/js/widget.min.js';fjs.parentNode.insertBefore(js,fjs);}}(document,'script','weatherwidget-io-js');
+    </script>
 
 <body>
     <h1>Welcome to CSW-38_DUPLICATE_assignment</h1>
     <p>I sure hope this works. LOL</p>
 
     <div class="grid-container">
-        <div class="card">Box 1</div>
-        <div class="card">Box 2</div>
-        <div class="card">Box 3</div>
+        <div class="card">Let's ask
+            <a href="https://www.google.com" target="_blank">Google</a>
+        </div>
+        <div class="card">
+            <a href="https://sdo.gsfc.nasa.gov/" target="_blank">Solar Dynamics Observatory</a>
+        </div>
+        <div class="card">
+            <a href="https://sos70.ru/" target="_blank">Today's Schuman Resonance</a>
+        </div>
         <div class="card">Date-Box 4</div>
-        <div class="card">Box 5</div>
-        <div class="card card-animate">Box 6</div>
+        <div class="card weather-box">
+            <h3>Today's Weather at Delta</h3>
+            <a class="weatherwidget-io" href="https://forecast7.com/en/38d00n121d32/95207/?unit=us" data-label_1="STOCKTON" data-label_2="WEATHER" data-font="Arial" data-icons="Climacons Animated" data-mode="Current" data-days="3" data-theme="pure">STOCKTON WEATHER</a>
+        </div>
+        <div class="card card-animate">
+            <h3>Animated Canvas</h3>
+            <canvas id="animatedCanvas" width="300" height="200"></canvas>
+        </div>
         <div class="card">Box 7</div>
     </div>
 
