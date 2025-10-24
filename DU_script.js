@@ -1,4 +1,5 @@
-/(function () {
+
+(function () {
     // Detect environment and show a simple message (helps confirm file encoding visually)
     const sample = 'UTF-8 check: ✓ — save this file as UTF-8';
     if (typeof window !== 'undefined' && typeof document !== 'undefined') {
@@ -10,29 +11,42 @@
     }
 })();
 
-// i'm not totally sure what this does.
-// 1. Wait for the page to load
+// Wait for the page to load
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Add current date and time to Date-Box 4
+  function updateDateTime() {
+    const now = new Date();
+    
+    const dateString = now.toLocaleDateString('en-US', {
+      weekday: 'long',
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+
+    const timeString = now.toLocaleTimeString('en-US', {
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+      hour12: true
+    });
+
+    const formattedDateTime = `${dateString}<br>${timeString}`;
+    
+    // Find the Date-Box 4 element and update its content
+    const dateBoxes = document.querySelectorAll('.card');
+    dateBoxes.forEach(box => {
+      if (box.textContent.includes('Date-Box 4')) {
+        box.innerHTML = `<strong>Current Date & Time:</strong><br>${formattedDateTime}`;
+      }
+    });
+  }
   
-  // 2. Select the element you want to animate
-  // We're grabbing the div with the class "card-animate"
-  const elementToAnimate = document.querySelector('.card-animate');
-
-  // 3. Define the keyframes for the animation
-  // This is what the animation will do (e.g., from 0 degrees to 360 degrees)
-  const keyframes = [
-    { transform: 'rotate(0deg)' },
-    { transform: 'rotate(360deg)' }
-  ];
-
-  // 4. Define the options for the animation
-  // This controls how long it takes, how many times it repeats, etc.
-  const options = {
-    duration: 3000,    // Animation lasts 3 seconds (3000 milliseconds)
-    iterations: Infinity // Repeat forever
-  };
-
-  // 5. Apply the animation to the element
-  elementToAnimate.animate(keyframes, options);
+  // Update immediately when page loads
+  updateDateTime();
+  
+  // Update every second
+  setInterval(updateDateTime, 1000);
 
 });
