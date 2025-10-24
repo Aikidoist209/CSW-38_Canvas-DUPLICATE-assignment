@@ -29,14 +29,13 @@ p {
 .grid-container {
     font-family: 'Lexend Tera', sans-serif;
     display: grid;
-    grid-template-columns: 250px 250px;
-    column-gap: 375px;
-    row-gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
     padding: 15px;
-    justify-content: center-right;
-    padding-right: 50px;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
-
 a {
     color: white;
     text-decoration: none;
@@ -59,9 +58,14 @@ a {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid black;
     border-radius: 12px;
-    min-width: 500px;
+    width: 100%;
+    max-width: 500px;
+    min-width: 250px;
     margin: auto;
     padding: 20px;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    box-sizing: border-box;
 }
 
 .card-link{
@@ -121,4 +125,128 @@ a {
 .weatherwidget-io {
     width: 100% !important;
     max-width: 250px;
+}
+
+/* Responsive Design - Media Queries */
+
+/* Large screens (desktops) */
+@media screen and (min-width: 1200px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        max-width: 1400px;
+    }
+    
+    .card {
+        max-width: 600px;
+        padding: 25px;
+    }
+    
+    h1 {
+        font-size: 2.5em;
+    }
+}
+
+/* Medium screens (tablets) */
+@media screen and (max-width: 1199px) and (min-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .card {
+        max-width: 450px;
+        padding: 18px;
+    }
+    
+    .card-animate {
+        grid-column: span 2;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    #animatedCanvas {
+        width: 280px;
+        height: 180px;
+    }
+}
+
+/* Small screens (mobile phones) */
+@media screen and (max-width: 767px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 10px;
+    }
+    
+    .card {
+        max-width: 100%;
+        min-width: auto;
+        padding: 15px;
+        margin: 0;
+    }
+    
+    .card-animate {
+        grid-column: 1;
+        grid-row: auto;
+    }
+    
+    h1 {
+        font-size: 1.5em;
+        margin: 20px auto;
+        padding: 10px;
+    }
+    
+    p {
+        font-size: 0.9em;
+        margin: 15px auto;
+    }
+    
+    a {
+        font-size: 1em;
+    }
+    
+    #animatedCanvas {
+        width: 250px;
+        height: 150px;
+    }
+    
+    .weather-box {
+        min-height: 120px;
+        max-height: 250px;
+    }
+    
+    .weatherwidget-io {
+        max-width: 220px;
+    }
+}
+
+/* Extra small screens */
+@media screen and (max-width: 480px) {
+    .grid-container {
+        padding: 8px;
+        gap: 12px;
+    }
+    
+    .card {
+        padding: 12px;
+        font-size: 0.9em;
+    }
+    
+    h1 {
+        font-size: 1.2em;
+        margin: 15px auto;
+    }
+    
+    #animatedCanvas {
+        width: 200px;
+        height: 120px;
+    }
+    
+    .weatherwidget-io {
+        max-width: 180px;
+    }
 }

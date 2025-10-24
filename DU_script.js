@@ -34,13 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const formattedDateTime = `${dateString}<br>${timeString}`;
     
-    // Find the Date-Box 4 element and update its content
-    const dateBoxes = document.querySelectorAll('.card');
-    dateBoxes.forEach(box => {
-      if (box.textContent.includes('Date-Box 4')) {
-        box.innerHTML = `<strong>Current Date & Time:</strong><br>${formattedDateTime}`;
-      }
-    });
+    // Find the date-time box by ID
+    const dateTimeBox = document.getElementById('date-time-box');
+    
+    if (dateTimeBox) {
+      dateTimeBox.innerHTML = `<strong>Current Date & Time:</strong><br>${formattedDateTime}`;
+      console.log('Time updated successfully:', timeString);
+    } else {
+      console.log('Date-time box not found!');
+    }
   }
   
   // Update immediately when page loads
