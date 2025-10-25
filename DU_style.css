@@ -34,7 +34,7 @@ p {
 .grid-container {
     font-family: 'Lexend Tera', sans-serif;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 400px 1fr;
     gap: 20px;
     padding: 15px;
     justify-content: center;
@@ -89,6 +89,62 @@ a {
     background-color:rgb(145, 128, 161);
     border: rgba(255, 255, 255, 0.1);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Container Card Styles */
+.container-card {
+    max-width: 100%;
+    min-width: auto;
+    padding: 25px;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 2px solid rgba(255, 0, 255, 0.3);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.2);
+    align-self: start;
+}
+
+.container-card h2 {
+    color: fuchsia;
+    text-align: center;
+    margin: 0 0 20px 0;
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+    font-size: 1.5em;
+}
+
+.inner-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.inner-card {
+    max-width: none;
+    min-width: auto;
+    padding: 15px;
+    margin: 0;
+    font-size: 0.9em;
+    background-color: rgba(255, 255, 255, 0.08);
+    width: 100%;
+}
+
+.inner-card:hover {
+    transform: scale(1.02);
+    background-color: rgba(145, 128, 161, 0.8);
+}
+
+/* Left Column Styles */
+.left-column {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Right Column Styles */
+.right-column {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .card-animate {
@@ -197,6 +253,33 @@ a {
     .card-animate {
         grid-column: 1;
         grid-row: auto;
+    }
+    
+    .container-card {
+        padding: 20px;
+    }
+    
+    .left-column {
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .right-column {
+        grid-column: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .inner-grid {
+        gap: 12px;
+    }
+    
+    .container-card h2 {
+        font-size: 1.3em;
+        margin-bottom: 15px;
     }
     
     h1 {
