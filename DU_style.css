@@ -30,6 +30,31 @@ p {
     width: fit-content;
 }
 
+nav {
+    font-family: 'Lexend Tera', sans-serif;
+    text-align: center;
+    text-shadow: white 0px 0px 5px;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 10px 20px;
+    margin: 30px auto;
+    width: fit-content;
+}
+
+nav a{
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 8px 15px;
+    margin: 0 10px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: white;
+    color: purple;
+    transform: scale(1.05);
+}
+
 
 .grid-container {
     font-family: 'Lexend Tera', sans-serif;
