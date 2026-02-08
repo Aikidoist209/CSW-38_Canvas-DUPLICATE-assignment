@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 html {
-    background-image: radial-gradient(circle, purple, rgb(63, 6, 76), black);
+    background-image: radial-gradient(circle, rgb(70, 58, 70), rgb(84, 66, 88), black);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
